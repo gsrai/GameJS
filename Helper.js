@@ -153,6 +153,7 @@ function InputHandler() {
  * @property {function} isDown
  * checks if specific key is down or held down
  * @param {string} code   - key code, number but stored as a string.
+ * @return {bool}         - returns if the key is down or not
  */
 InputHandler.prototype.isDown = function(code) {
 	return this.down[code];
@@ -171,6 +172,9 @@ InputHandler.prototype.isDown = function(code) {
  *
  * else return false as the key is not down and has not been pressed. 
  * AKA no event for that key
+ *
+ * @param {string} code   - key code, number but stored as a string.
+ * @return {bool}         - returns if the key has been pressed or not
  */
 InputHandler.prototype.isPressed = function(code) {
 	if (this.pressed[code]) {
