@@ -8,6 +8,8 @@
  * - FPSCounter
  */
 
+"use strict"; // jshint won't shut up about it
+
 /**
  * @class Canvas
  * Abstracts the initialisation of the canvas when making games, mostly code reuse.
@@ -222,7 +224,7 @@ Sprite.prototype.draw = function(ctx, x, y) {
 function FPSCounter(ctx) {
 	this.current = 0;
 	this.last = 0;
-	this.lastUpdated: Date.now();
+	this.lastUpdated = Date.now();
 	this.ctx = ctx;
 }
 
@@ -233,10 +235,10 @@ function FPSCounter(ctx) {
 FPSCounter.prototype.draw = function() {
 	this.ctx.save();
 
-	this.ctx.font = '12pt Arial';
-	this.ctx.fillStyle = '#fff';
-	this.ctx.textBaseline = 'top';
-	this.ctx.fillText(this.last + 'fps', 5, 5);
+	this.ctx.font = "12pt Arial";
+	this.ctx.fillStyle = "#fff";
+	this.ctx.textBaseline = "top";
+	this.ctx.fillText(this.last + "fps", 5, 5);
 	this.ctx.fill();
 
 	this.ctx.restore();
