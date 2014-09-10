@@ -8,7 +8,7 @@
  * - FPSCounter
  */
 
-"use strict"; // jshint won't shut up about it
+"use strict"; 
 
 /**
  * @class Canvas
@@ -94,6 +94,7 @@ function Animate(loop, canvas) {
 }
 
 // Key Codes
+/*
 var KEY_UP     = 38,
 	KEY_DOWN   = 40,
 	KEY_LEFT   = 37,
@@ -103,6 +104,18 @@ var KEY_UP     = 38,
 	KEY_W      = 87, 
 	KEY_S      = 83, 	
 	KEY_SPACE  = 32;
+*/
+var keys = {
+    KEY_UP     : 38,
+    KEY_DOWN   : 40,
+    KEY_LEFT   : 37,
+    KEY_RIGHT  : 39,
+    KEY_A      : 65,    
+    KEY_D      : 68, 
+    KEY_W      : 87, 
+    KEY_S      : 83,    
+    KEY_SPACE  : 32
+};
 
 /**
  * @class InputHandler
@@ -163,7 +176,8 @@ InputHandler.prototype.isPressed = function(code) {
 	if (this.pressed[code]) {
 		return false;
 	} else if (this.down[code]) {
-		return this.pressed[code] = true;
+        this.pressed[code] = true;
+        return this.pressed[code];
 	}
 	return false;
 };
